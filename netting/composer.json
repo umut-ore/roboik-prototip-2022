@@ -1,0 +1,6 @@
+{
+    "require": {
+        "phpauth/phpauth": "dev-master",
+        "ifsnop/mysqldump-php": "^2.9"
+    }
+}

@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteRule ^([^\.]+)$ $1.php [NC]
+
+php_flag display_errors off
+
+RewriteEngine On
+RewriteCond %{SERVER_PORT} 80RewriteRule ^(.*)$ https://degerlendirmesistemi.online/$1 [R,L]
