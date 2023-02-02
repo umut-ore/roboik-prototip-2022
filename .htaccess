@@ -1,0 +1,29 @@
+RewriteEngine On
+RewriteRule ^([^\.]+)$ $1.php [NC]
+
+php_flag display_errors off
+
+RewriteEngine On
+#RewriteCond %{SERVER_PORT} 80
+#RewriteRule ^(.*)$ https://degerlendirmesistemi.online/$1 [R,L]
+
+#Project evaluation screen
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^proje-bilgi-dokumani-puanlama/(.*)$ puanlama.php?id=$1 [QSA,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^proje-teslim-dokumani-puanlama/(.*)$ puanlama2.php?id=$1 [QSA,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^hakem-puanlama/(.*)$ hakem-puanla.php?id=$1 [QSA,L]
+
+
+
+#project listing screen
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^proje-bilgi-dokumani-ayar degerlendirme-sistemi.php?page=1 [QSA,L]
+RewriteRule ^proje-teslim-dokumani-ayar degerlendirme-sistemi.php?page=2 [QSA,L]
+RewriteRule ^proje-bilgi-dokumani puanlama-tablosu.php?page=1 [QSA,L]
+RewriteRule ^proje-teslim-dokumani puanlama-tablosu.php?page=2 [QSA,L]
